@@ -1,8 +1,8 @@
-" Pathogen 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 " Forget being compatible with good ol' vi
-  set nocompatible
+set nocompatible
+" Pathogen 
+let g:snippets_dir="~/.vim/bundle/snipmate/snippets/"
+call pathogen#runtime_append_all_bundles() call pathogen#helptags()
 " Color Scheme
 colorscheme wombat256
 "colorscheme jellybeans
