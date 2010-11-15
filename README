@@ -1,0 +1,6 @@
+My vim configuration. 
+
+Installation Instructions:
+command-t
+	cd bundle/command-t
+	rake make
