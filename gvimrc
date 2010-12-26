@@ -1,12 +1,11 @@
-" Forget being compatible with good ol' vi
 set nocompatible
 " Pathogen 
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 " Turns off the audio bell
 set vb
 " Make command line two lines high
@@ -42,10 +41,12 @@ set hls
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Looks
 colorscheme wombat
-set guifont=DroidSansMonoSlashed:h12
+set guifont=DroidSansMonoSlashed
 set bg=dark
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
 set expandtab
 " Wrap lines at 120 chars
 set textwidth=120
