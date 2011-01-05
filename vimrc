@@ -74,10 +74,10 @@ nnoremap k gk
 nnoremap 0 g0
  nnoremap $ g$
 " command T
-if has("gui_macvim")
-    macmenu &File.New\ Tab key=<nop>
+"if has("gui_macvim")
+"    macmenu &File.New\ Tab key=<nop>
     map <C-t> :CommandT<CR>
-endif
+"endif
 "TEX STUFF
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep

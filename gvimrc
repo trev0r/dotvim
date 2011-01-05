@@ -4,10 +4,28 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Fast editing of the .vimrc
+map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+
+" When vimrc is edited, reload it
+autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+
 syntax on
 filetype plugin indent on
-" Turns off the audio bell
-set vb
+" No sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
 " Make command line two lines high
 set ch=2
 " Number lines
@@ -42,12 +60,14 @@ set hls
 " Looks
 colorscheme wombat
 set guifont=DroidSansMonoSlashed
-set bg=dark
-set tabstop=2
+"set bg=dark
+set tabstop=4
 set smarttab
 set shiftwidth=2
 set autoindent
+set smartindent
 set expandtab
+set wrap
 " Wrap lines at 120 chars
 set textwidth=120
 " highlight matching braces
@@ -71,12 +91,27 @@ nmap <silent> ,sv :so $MYVIMRC<cr>
 nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
- nnoremap $ g$
-" command T
-if has("gui_macvim")
-    macmenu &File.New\ Tab key=<nop>
+nnoremap $ g$
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l command T
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Really useful!
+"  In visual mode when you press * or # to search for the current selection
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
+
+" When you press gv you vimgrep after the selected text
+vnoremap <silent> gv :call VisualSearch('gv')<CR>
+map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+"if has("gui_macvim")
+"    macmenu &File.New\ Tab key=<nop>
     map <C-t> :CommandT<CR>
-endif
+"endif
 "TEX STUFF
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -86,5 +121,10 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+set nobackup
+set nowb
+set noswapfile
