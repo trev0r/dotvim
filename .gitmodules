@@ -26,7 +26,7 @@
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "vim-supertab"]
-	path = vim-supertab
+	path = bundle/vim-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
@@ -34,3 +34,9 @@
 [submodule "bundle/tComment"]
 	path = bundle/tComment
 	url = https://github.com/vim-scripts/tComment.git
+[submodule "bundle/vim-rails"]
+	path = bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-repeat"]
+	path = bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
