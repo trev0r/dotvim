@@ -8,5 +8,11 @@
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "Command-T"]
-	path = Command-T
+	path = bundle/Command-T
 	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/wombat"]
+	path = bundle/wombat
+	url = https://github.com/vim-scripts/Wombat.git
+[submodule "bundle/fruity"]
+	path = bundle/fruity
+	url = https://github.com/vim-scripts/fruity.vim.git
