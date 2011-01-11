@@ -16,3 +16,21 @@
 [submodule "bundle/fruity"]
 	path = bundle/fruity
 	url = https://github.com/vim-scripts/fruity.vim.git
+[submodule "bundle/jquery"]
+	path = bundle/jquery
+	url = https://github.com/vim-scripts/jQuery.git
+[submodule "bundle/vim-latex"]
+	path = bundle/vim-latex
+	url = https://github.com/mineiro/vim-latex.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim-supertab"]
+	path = vim-supertab
+	url = https://github.com/tsaleh/vim-supertab.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/tComment"]
+	path = bundle/tComment
+	url = https://github.com/vim-scripts/tComment.git
