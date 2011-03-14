@@ -44,5 +44,5 @@
 	path = bundle/wombat256
 	url = https://github.com/vim-scripts/wombat256.vim.git
 [submodule "matchit.zip"]
-	path = matchit.zip
+	path = bundle/matchit.zip
 	url = https://github.com/vim-scripts/matchit.zip
