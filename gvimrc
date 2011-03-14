@@ -12,17 +12,18 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+map <leader>e :e! ~/.gvimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
 syntax on
 filetype plugin indent on
 " No sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
+set visualbell t_vb=
 set tm=500
 
 
@@ -45,7 +46,8 @@ set guicursor+=i-ci:ver25-Cursor
 set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 " set the gui options 
-set guioptions=ac
+set guioptions=ace
+set fuopt=maxvert,maxhorz
 " Keep some stuff in the history
 set history=100
 " When the page starts to scroll, keep the cursor 8 lines from
@@ -69,7 +71,7 @@ set smartindent
 set expandtab
 set wrap
 " Wrap lines at 120 chars
-set textwidth=120
+set textwidth=80
 " highlight matching braces
 set showmatch
 " Why is this not a default
@@ -96,7 +98,7 @@ nnoremap $ g$
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
-map <C-l> <C-W>l command T
+map <C-l> <C-W>l 
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""

@@ -40,3 +40,9 @@
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "bundle/wombat256"]
+	path = bundle/wombat256
+	url = https://github.com/vim-scripts/wombat256.vim.git
+[submodule "matchit.zip"]
+	path = matchit.zip
+	url = https://github.com/vim-scripts/matchit.zip

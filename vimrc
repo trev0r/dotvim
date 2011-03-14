@@ -43,7 +43,7 @@ set hls
 " Looks
 colorscheme wombat
 set guifont=DroidSansMonoSlashed:h12
-set bg=dark
+"set bg=dark
 set tabstop=2
 set smarttab
 set shiftwidth=2
