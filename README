@@ -4,3 +4,6 @@ Installation Instructions:
 command-t
 	cd bundle/command-t
 	rake make
+To install a new addon:
+git submodule add URL bundle/ADDON_NAME
+
