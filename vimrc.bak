@@ -4,29 +4,11 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
-" Fast saving
-nmap <leader>w :w!<cr>
-
-" Fast editing of the .vimrc
-map <leader>e :e! ~/.gvimrc<cr>
-
-" When vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
-autocmd! bufwritepost .gvimrc source ~/.gvimrc
-
 syntax on
-filetype plugin indent on
-" No sound on errors
-set noerrorbells
-set novisualbell
-set visualbell t_vb=
-set tm=500
-
-
+filetype plugin on
+filetype indent on
+" Turns off the audio bell
+set vb
 " Make command line two lines high
 set ch=2
 " Number lines
@@ -46,10 +28,7 @@ set guicursor+=i-ci:ver25-Cursor
 set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 " set the gui options 
-set guioptions=ace
-if has("gui_running")
-set fuopt=maxvert,maxhorz
-endif
+set guioptions=ac
 " Keep some stuff in the history
 set history=100
 " When the page starts to scroll, keep the cursor 8 lines from
@@ -62,22 +41,16 @@ set hls
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Looks
-if has("gui_running")
 colorscheme wombat
-else
-  colorscheme wombat256i
-endif
-set guifont=DroidSansMonoSlashed
-set bg=dark
-set tabstop=4
+set guifont=DroidSansMonoSlashed:h12
+"set bg=dark
+set tabstop=2
 set smarttab
 set shiftwidth=2
 set autoindent
-set smartindent
 set expandtab
-set wrap
 " Wrap lines at 120 chars
-set textwidth=80
+set textwidth=120
 " highlight matching braces
 set showmatch
 " Why is this not a default
@@ -99,30 +72,11 @@ nmap <silent> ,sv :so $MYVIMRC<cr>
 nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
-nnoremap $ g$
-" Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
-" Really useful!
-"  In visual mode when you press * or # to search for the current selection
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
-
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSearch('gv')<CR>
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
-else
-  map <C-t> :CommandT<CR>
-endif
-let g:CommandTMaxHeight = 15
+ nnoremap $ g$
+" command T
+"if has("gui_macvim")
+"    macmenu &File.New\ Tab key=<nop>
+    map <C-t> :CommandT<CR>
 "endif
 "TEX STUFF
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -133,10 +87,5 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git anyway...
-set nobackup
-set nowb
-set noswapfile
+let g:Tex_ViewRule_pdf = 'Skim'
+

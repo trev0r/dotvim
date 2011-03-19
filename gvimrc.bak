@@ -47,9 +47,7 @@ set guicursor+=r-cr:hor20-Cursor
 set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 " set the gui options 
 set guioptions=ace
-if has("gui_running")
 set fuopt=maxvert,maxhorz
-endif
 " Keep some stuff in the history
 set history=100
 " When the page starts to scroll, keep the cursor 8 lines from
@@ -62,13 +60,9 @@ set hls
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Looks
-if has("gui_running")
 colorscheme wombat
-else
-  colorscheme wombat256i
-endif
 set guifont=DroidSansMonoSlashed
-set bg=dark
+"set bg=dark
 set tabstop=4
 set smarttab
 set shiftwidth=2
@@ -122,7 +116,6 @@ if has("gui_macvim")
 else
   map <C-t> :CommandT<CR>
 endif
-let g:CommandTMaxHeight = 15
 "endif
 "TEX STUFF
 " IMPORTANT: grep will sometimes skip displaying the file name if you
