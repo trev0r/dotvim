@@ -116,12 +116,12 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
 map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
-else
+"if has("gui_macvim")
+"  macmenu &File.New\ Tab key=<nop>
+"  map <D-t> :CommandT<CR>
+"else
   map <C-t> :CommandT<CR>
-endif
+"endif
 let g:CommandTMaxHeight = 15
 "endif
 "TEX STUFF
