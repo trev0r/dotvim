@@ -1,6 +1,8 @@
 My vim configuration. 
 
 Installation Instructions:
+initiailze submodules
+        git submodule update --init
 command-t
 	cd bundle/command-t
 	rake make
