@@ -19,7 +19,14 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
 syntax on
-filetype plugin indent on
+if !&diff && has('gui_running')
+  filetype plugin indent on " Enable filetype-specific indenting and plugins
+endif
+au BufRead,BufNewFile *.thrift set filetype=thrift
+au! Syntax thrift source ~/.vim/fts/thrift.vim
+au! Syntax thrift source ~/.vim/fts/thrift.vim
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=html
+
 " No sound on errors
 set noerrorbells
 set novisualbell
@@ -123,7 +130,33 @@ map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
   map <C-t> :CommandT<CR>
 "endif
 let g:CommandTMaxHeight = 15
+
+set wildignore=__init__.py,*.pyc,*.class
+set wildignore+=tools/tellapartcreativez/**
+set wildignore+=rye/scripts/tellapart/**
+set wildignore+=tools/spanakopita/tellapart/**
+set wildignore+=tools/tellapartdashboardz/tellapart*/**
+set wildignore+=tools/tellapartdashboardz/static/app/**
+set wildignore+=tools/mission-control/node_modules/**
+set wildignore+=tools/mission-control/tmp/**
+set wildignore+=third_party/**
+set wildignore+=selenium/**
+set wildignore+=lib/**
+set wildignore+=bin/**
+set wildignore+=include/**
+set wildignore+=node_modules/**
+set wildignore+=py/tellapart/frontend/dashboard/static/app/js/node_modules/**
+set wildignore+=tmp/**
+
 "endif
+"
+""Use jshint
+let g:syntastic_javascript_checkers=['jshint']
+"Use python
+let g:syntastic_python_checkers=['pyflakes', 'python']
+" Delete trailing whitespace on file write
+autocmd BufWritePre * :%s/\s\+$//e
+
 "TEX STUFF
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
